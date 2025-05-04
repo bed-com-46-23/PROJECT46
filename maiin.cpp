@@ -1,35 +1,19 @@
 #include <iostream>
-#include <string>
-#include "person.h"
+#include "rectangle.h"
+#include "triangle.h"
+
 using namespace std;
 
 int main() {
-    
-    person jane = person("jane", 60.0f);
-    person john = person("john", 75.0f);
+     rectangle rect;
+     triangle trgl;
+     polygon* ppoly1 = &rect;
+     polygon* ppoly2 = &trgl;
+     ppoly1->setvalues(4,5);
+     ppoly2->setvalues(4,5);
 
-    float totalweight = jane + john;
+     cout<<rect.area()<<" \n";
+     cout<<trgl.area()<<" \n";
 
-    if (jane == john) {
-        cout<<"this is the same person" <<endl;   
-    }
-    if ( jane != john) {
-        cout<<"this is NOT the same person"<<endl;
-    }
-    if (jane < john) {
-        cout<<"jane is younger than john"<<endl;
-    }
-    if (john > jane) {
-        cout<<"john is older than jane" <<endl;
-    }
-    int johnage = john;
-    cout<<"john's age: "<<johnage<<endl;
-    cout<<"total weight: "<<totalweight<<endl;
-
-    string janefirstname = jane;
-    cout<<"jane's firstname"<<janefirstname<<endl;
-
-    float janeweight = jane;
-    cout<<"jane's weight"<<janeweight<<endl;
-    return 0;
+     return 0;
 }
