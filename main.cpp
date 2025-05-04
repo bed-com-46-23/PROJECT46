@@ -1,53 +1,39 @@
 #include <iostream>
-#include "shapes.h"
-
+#include "box.h"
 using namespace std;
+
+//main function for the program
 int main() {
-     int length, width, base, height, radius;
-     shapes::square shape1;
-     shapes::triangle shape2;
-     shapes::circle shape3;
+    box box1; //declare box1 of type box
+    box box2; //declare box2 of the type box
+    box box3; //declare box3 of the type
+    double volume = 0.0; //store the volume of the box here
 
-     shape1 = shapes::square(length, width);
-     shape2 = shapes::triangle(height, base);
-     shape3 = shapes::circle(radius);
+    // box 1 specification
+    box1.setlength(6.0);
+    box1.setbreadth(7.0);
+    box1.setheight(5.0);
 
-int choice;
-do {
-     cout<<" 1. calculate the area of a square. "<<endl;
-     cout<<" 2. calculate the area of a triangle. "<<endl;
-     cout<<" 3. calculate the area of a circle. "<<endl;
-     cout<<" 4. quit"<<endl;
+    //box 2 specification
+    box2.setlength(12.0);
+    box2.setbreadth(13.0);
+    box2.setheight(10.0);
 
-     if (choice == 1) {
-      cout<<" 1. calculate the area of a square. "<<endl;
-      cout<<"enter the side length: ";
-      cin>>length;
-      cout<<"enter another side length: ";
-      cin>>width;
-      cout<<"the area of the square is: "<<shapes::area::areaofsquare();
-        
-     }
+    //volume of box 1
+    volume = box1.getvolume();
+    cout<<"volume of box1 : "<<volume<<endl;
 
-     else if(choice == 2) {
-          cout<<" 1. calculate the area of a triangle. "<<endl;
-      cout<<"enter the height of the triangle: ";
-      cin>>length;
-      cout<<"enter the base of the triangle: ";
-      cin>>width;
-      cout<<"the area of the square is: "<<shapes::area::areaoftriangle();
-     }
-     else if (choice == 3) {
-          cout<<" 1. calculate the area of a circle. "<<endl;
-          cout<<"enter the radius of the circle: ";
-          cin>>length;
-          cout<<"the area of the circle is: "<<shapes::area::areaofcircle();
-     }
-     else {
-          
-     }
-} while (choice != 4);
+    //volume of box 2
+    volume = box2.getvolume();
+    cout<<"volume of box2 : "<<volume<<endl;
 
-return 0;
-     
+    //add two object as follows:
+    box3 = box1 + box2;
+
+    //volume of box 3
+    volume = box3.getvolume();
+    cout<<"volume of box3 : "<<volume<<endl;
+
+    return 0;
+
 }
